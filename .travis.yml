@@ -1,0 +1,17 @@
+notifications:
+ webhooks:
+  urls:
+   - https://open.feishu.cn/officialapp/notify/f644f1205c539d6b38aa7b19584b42fb05d3856dc29796e050635b2dc4ca2ec2
+  on_success: always # default: always
+  on_failure: always # default: always
+  on_start: never # default: never
+  on_cancel: always # default: always
+  on_error: always # default: always
+
+language: go
+go:
+ - 1.13.x
+
+script:
+- "go build"
+
