@@ -115,7 +115,7 @@ func main() {
 	flag.Parse()
 
 	log.SetFlags(log.Flags() &^ (log.Ldate | log.Ltime))
-	_, err := rotatelogs.New(
+	logf, err := rotatelogs.New(
 		filepath.Join(*logdir, "PodLifecycle_log.%Y%m%d%H%M"),
 		rotatelogs.WithLinkName(filepath.Join(*logdir, "PodLifecycle_log")),
 		rotatelogs.WithRotationTime(24*time.Hour))
@@ -135,7 +135,7 @@ func main() {
 
 	log.Print("write log to " + *logdir)
 
-	//log.SetOutput(logf)
+	log.SetOutput(logf)
 
 	lastLogSet = make(sets.String)
 	lastLogTimestamp = time.Now().Add(-5 * 24 * time.Hour)
