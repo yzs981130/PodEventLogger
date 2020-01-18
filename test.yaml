@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podeventlogger
+  namespace: default
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: xp001
+  serviceAccountName: frameworkcontroller
+  containers:
+  - name: podeventlogger
+    image: yzs981130/podeventlogger:version-0.0.2
+    command: ["PodEventLogger"]
+    #args: ["--kubeconfig","/log/config"]
+    imagePullPolicy: Never
+    volumeMounts:  
+    - name: volum
+      mountPath: /log 
+  volumes: 
+  - name: volum  
+    hostPath:  
+      path: /home/amax/rxy-test
