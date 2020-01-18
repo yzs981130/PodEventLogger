@@ -48,7 +48,7 @@ func cleanup() {
 			}
 		}
 		if pos == -1 {
-			log.Fatal("InactivePodsThresholdCnt and InactivePodsThresholdTime mismatch")
+			log.Fatal("lastLogEventsThresholdCnt and lastLogEventsThresholdTime mismatch")
 			return
 		}
 		lastLogEvents = lastLogEvents[pos+1:]
