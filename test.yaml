@@ -12,11 +12,12 @@ spec:
     image: yzs981130/podeventlogger:version-0.0.2
     command: ["PodEventLogger"]
     #args: ["--kubeconfig","/log/config"]
-    imagePullPolicy: Never
+    restartPolicy: Always
+    imagePullPolicy: Always
     volumeMounts:  
-    - name: volum
+    - name: logdir
       mountPath: /log 
   volumes: 
-  - name: volum  
+  - name: logdir  
     hostPath:  
       path: /home/amax/rxy-test
