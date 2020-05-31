@@ -15,3 +15,12 @@ go:
 script:
 - "go build"
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_ACCESS_TOKEN
+  skip_cleanup: true
+  file_glob: true
+  file: PodEventLogger 
+  on:
+    repo: yzs981130/PodEventLogger
+    tags: true
