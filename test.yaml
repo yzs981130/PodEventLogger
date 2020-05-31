@@ -4,6 +4,7 @@ metadata:
   name: podeventlogger
   namespace: default
 spec:
+  restartPolicy: Always
   nodeSelector:
     kubernetes.io/hostname: p100-1
   serviceAccountName: octopus-tasksetcontroller
@@ -12,7 +13,6 @@ spec:
     image: yzs981130/podeventlogger:version-0.0.2
     command: ["PodEventLogger"]
     #args: ["--kubeconfig","/log/config"]
-    restartPolicy: Always
     imagePullPolicy: Always
     volumeMounts:  
     - name: logdir
