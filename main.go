@@ -116,8 +116,8 @@ func main() {
 
 	log.SetFlags(log.Flags() &^ (log.Ldate | log.Ltime))
 	logf, err := rotatelogs.New(
-		filepath.Join(*logdir, "PodLifecycle_log.%Y%m%d%H%M"),
-		rotatelogs.WithLinkName(filepath.Join(*logdir, "PodLifecycle_log")),
+		filepath.Join(*logdir, "PodEvent_log.%Y%m%d%H%M"),
+		rotatelogs.WithLinkName(filepath.Join(*logdir, "PodEvent_log")),
 		rotatelogs.WithRotationTime(24*time.Hour))
 	if err != nil {
 		log.Printf("failed to create rotatelogs: %s", err)
