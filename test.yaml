@@ -5,8 +5,8 @@ metadata:
   namespace: default
 spec:
   nodeSelector:
-    kubernetes.io/hostname: xp001
-  serviceAccountName: frameworkcontroller
+    kubernetes.io/hostname: p100-1
+  serviceAccountName: octopus-tasksetcontroller
   containers:
   - name: podeventlogger
     image: yzs981130/podeventlogger:version-0.0.2
@@ -20,4 +20,4 @@ spec:
   volumes: 
   - name: logdir  
     hostPath:  
-      path: /home/amax/rxy-test
+      path: /home/amax/yezhisheng/log
