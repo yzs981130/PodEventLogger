@@ -15,8 +15,8 @@ go:
 script:
 - "go build"
 - echo $GITHUB_ACCESS_TOKEN | docker login docker.pkg.github.com -u yzs981130 --password-stdin
-- docker build -t docker.pkg.github.com/yzs981130/podeventlogger
-- docker push docker.pkg.github.com/yzs981130/podeventlogger
+- docker build -t docker.pkg.github.com/yzs981130/podeventlogger/image .
+- docker push docker.pkg.github.com/yzs981130/podeventlogger/image
 
 deploy:
   provider: releases
