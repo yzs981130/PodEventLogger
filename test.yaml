@@ -10,7 +10,7 @@ spec:
   serviceAccountName: octopus-tasksetcontroller
   containers:
   - name: podeventlogger
-    image: yzs981130/podeventlogger:version-0.0.2
+    image: yzs981130/podeventlogger:version-0.0.3
     command: ["PodEventLogger"]
     #args: ["--kubeconfig","/log/config"]
     imagePullPolicy: Always
