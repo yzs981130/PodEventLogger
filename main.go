@@ -65,7 +65,7 @@ func work() {
 	var currEvents []v1.Event
 	currLastLogTimestamp := lastLogTimestamp
 
-	data, err := clientset.RESTClient().Get().AbsPath("api/v1/namespaces/default/events").DoRaw()
+	data, err := clientset.RESTClient().Get().AbsPath("api/v1/events").DoRaw()
 	if err != nil {
 		log.Fatal("can't get events: " + err.Error())
 	}
