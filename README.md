@@ -12,5 +12,5 @@
 
 ## image
 
-`docker pull yzs981130/podeventlogger:version-0.0.3`
+`docker pull yzs981130/podeventlogger:version-0.0.4`
 
